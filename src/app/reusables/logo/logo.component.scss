@@ -1,0 +1,19 @@
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    img {
+        object-fit: contain;
+    }
+
+    p {
+        color: white;
+        font-family: 'Unbounded', sans-serif;
+        margin: 0;
+        font-weight: 400;
+        text-align: center;
+    }
+}

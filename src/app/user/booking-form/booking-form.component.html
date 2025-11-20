@@ -1,0 +1,50 @@
+<!-- App-Background-component -->
+<app-background imageUrl="../../../assets/backgrounds/booking.jpg"></app-background>
+<div class="logo-container">
+    <app-logo width="100px" height="90px" fontSize="35px"></app-logo>
+</div>
+
+<!-- Booking-form-Page -->
+<main class="booking-form">
+    <section class="booking-box">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <h4 class="form-title">Book Appointment</h4>
+            <div class="reg-input">
+                <i class="fa-solid fa-user" style="color: #0665ff;"></i>
+                <input type="text" placeholder="Name:" required>
+            </div>
+            <div class="mnb">
+                <div class="pas-input">
+                    <div class="mobile">
+                        <i class="fa-solid fa-phone" style="color: #0665ff;"></i>
+                        <input type="text" placeholder="Mobile:" required>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <select name="barberlist" id="barberlist">
+                        <option value="" selected>Select Barber</option>
+                        <ng-container *ngFor="let barbers of BarberList">
+                            <option value="{{barbers}}">{{barbers}}</option>
+                        </ng-container>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <p class="title">SERVICES</p>
+                <div class="services-p">
+                    <div class="services-c" *ngFor="let service of serviceList">
+                        <input type="checkbox">
+                        <p>{{service}}</p>
+                    </div>
+                </div>
+                <p class="title">REMINDER</p>
+                <div class="reminder">
+                    <ng-container *ngFor="let time of timeList">
+                        <button type="button" class="btn btn-outline-warning">{{time}}</button>
+                    </ng-container>
+                </div>
+            </div>
+            <button class="btn btn-primary book" type="submit">Book Now</button>
+        </form>
+    </section>
+</main>

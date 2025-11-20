@@ -1,0 +1,21 @@
+<!-- App-Background Component -->
+<app-background imageUrl="../../../assets/backgrounds/login.jpg"></app-background>
+<!-- Login-Container for Authentication-->
+<main class="login-container">
+<app-logo height="75px" margin="38px"></app-logo>
+    <section class="login-box">
+        <form #f="ngForm" (ngSubmit)="onSubmit()" autocomplete="on">
+            <h1 class="form-title">Login</h1>
+            <div class="reg-input">
+                <img src="../../../assets/icons/reg-login.png" alt="lock" class="icon">
+                <input type="text" name="shopRegisterNo" placeholder="Shop Register No:" required [(ngModel)]="shopRegisterNo" autocomplete="username"><span class="compulsory-r" *ngIf="!shopRegisterNo">*</span>
+            </div>
+            <div class="pas-input">
+                <img src="../../../assets/icons/pas-login.png" alt="lock" class="icon">
+                <input type="password" name="password" placeholder="Password:" required [(ngModel)]="password" autocomplete="current-password"><span class="compulsory-p" *ngIf="!password">*</span>
+            </div>
+            <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Login</button>
+        </form>
+        <p class="fp" (click)="resetPassword()">Forgot Password</p>
+    </section>
+</main>

@@ -1,0 +1,13 @@
+<!-- toaster-component -->
+<div class="toaster" id="toaster">
+    <div class="info-type" [ngStyle]="{'background-color': type.color}">
+        <p class="message-info">{{type.info}}</p>
+    </div>
+    <div>
+        <p class="toaster-message">{{message}}</p>
+    </div>
+    <div class="progress-bar">
+        <div class="progress-fill" [ngStyle]="{'width.%': (value), 'background-color': type.color}">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+.current-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    .edit-btn,
+    .delete-btn {
+        padding: 7px;
+        border-radius: 8px;
+        background: none;
+        border: 1px solid grey;
+        transition: 0.3s ease;
+    }
+
+    .edit-btn {
+        color: #0088E0;
+    }
+
+    .delete-btn {
+        color: #e6220c;
+    }
+
+    .edit-btn:hover,
+    .delete-btn:hover {
+        color: white;
+        border: 1px solid rgb(95, 95, 95);
+    }
+
+    .edit-btn:hover {
+        background: #0088E0;
+    }
+
+    .delete-btn:hover {
+        background: #e6220c;
+    }
+}

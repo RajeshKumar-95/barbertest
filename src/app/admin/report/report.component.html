@@ -1,0 +1,30 @@
+<!-- Report-Display-Counts-Chart -->
+<!-- DashBoard-retruen-button -->
+<div class="return-dash">
+<a routerLink="/admin/dashboard" >Go to Dashboard</a>
+</div>
+
+<!-- Reports-All-values-Inidividual-values -->
+<div class="reports">
+    <div class="report-title">
+        <p>Customer Count Details</p>
+    </div>
+    <div class="report-content">
+        <!-- All-Values -->
+        <div class="report-final">
+            <label for="all-customer">Total Customer :</label>
+            <p><span></span></p>
+            <label for="completed">Completed :</label>
+            <p><span></span></p>
+            <label for="cancelled">Cancelled :</label>
+            <p><span></span></p>
+        </div>
+        <!-- individual values -->
+        <div class="report-individual">
+            <div *ngFor="let barber of barberList">
+                <label for="{{barber}}"><span>{{barber}}</span> Customers :</label>
+                <p><span></span></p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+.return-dash {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.reports {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #002D72;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.report-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 2px solid #002D72;
+    padding: 12px;
+    color: #df0000;
+
+    p {
+        font-size: 25px;
+        margin: 0;
+        padding: 5px;
+    }
+}
+
+
+.report-final {
+    padding: 12px;
+    font-size: 20px;
+    margin: 10px 5px 10px 5px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.report-individual {
+    padding: 12px;
+    font-size: 18px;
+    margin: 10px 5px 10px 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}

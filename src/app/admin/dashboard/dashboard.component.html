@@ -1,0 +1,84 @@
+<!-- Dashboard-Header-->
+<header class="header">
+    <!-- Logo-container -->
+    <div class="logo-container">
+        <app-logo color="#0665ff" flex="row" width="65px" height="50px"></app-logo>
+    </div>
+    <!-- Logout -->
+    <div class="logout-container">
+        <p>Welcome <span>{{admin}}...</span></p>
+        <button class="logout" (click)="adminLogout()"><i class="fa-solid fa-user"></i>Logout</button>
+    </div>
+</header>
+
+<!-- Dashboard-page -->
+<main class="actions-container">
+    <!-- Actions-for-Admin -->
+    <section class="form-container">
+        <button (click)="barberForm()" class="barber">Add Barber</button>
+        <button (click)="serviceForm()" class="service">Add Service</button>
+        <button (click)="report()">Reports</button>
+    </section>
+    <section class=info-container>
+    <router-outlet></router-outlet>
+    </section>
+</main>
+
+<!-- modal for Adding Barber -->
+
+<dialog class="custom-modal-barber" id="barberModal" #barberModal>
+    <div class="custom-modal-context">
+        <div class="custom-modal-header">
+            <app-logo color="#e74c3c" flex="row" width="45px" height="40px" fontSize="24px"></app-logo>
+            <button class="custom-modal-close" (click)="closeModal('barberModal')">x</button>
+        </div>
+        <div class="custom-modal-body">
+            <form action="">
+                <div class="barber-info">
+                    <div class="info-label">
+                        <label for="barberName">Barber Name:</label>
+                    </div>
+                    <div class="info-input">
+                        <input type="text" id="barberName" placeholder="Eg:Punith Raj" autocomplete="off">
+                    </div>
+                </div>
+                <h3 class="service-title">Services Available by Barber</h3>
+                <ul class="available-services">
+                    <li *ngFor="let service of serviceList">
+                        <input type="checkbox" [value]="service" />
+                        <span class="custom-checkbox"></span>
+                        {{ service }}
+                    </li>
+                </ul>
+                <button class="btn btn-outline-primary barber-button">Add Barber</button>
+            </form>
+        </div>
+    </div>
+</dialog>
+
+<!-- modal for adding Service -->
+
+<dialog class="custom-modal-service" id="serviceModal" #serviceModal>
+    <div class="custom-modal-context">
+        <div class="custom-modal-header">
+            <app-logo color="#e74c3c" flex="row" width="45px" height="40px" fontSize="24px"></app-logo>
+            <button class="custom-modal-close" (click)="closeModal('serviceModal')">x</button>
+        </div>
+        <div class="custom-modal-body-service">
+            <h3 class="service-heading">Add Services</h3>
+            <form action="">
+                <div class="service-info">
+                    <div>
+                        <label for="serviceName">Service Name :</label>
+                        <input type="text" id="serviceName" placeholder="Eg:Hair-coloring">
+                    </div>
+                    <div>
+                        <label for="serviceTime">Service Timing :</label>
+                        <input type="number" id="serviceTime" min="0" placeholder="Eg:25">
+                    </div>
+                </div>
+                <button class="btn btn-outline-primary">Add Service</button>
+            </form>
+        </div>
+    </div>
+</dialog>

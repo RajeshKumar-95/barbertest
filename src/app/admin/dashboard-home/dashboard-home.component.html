@@ -1,0 +1,23 @@
+<!-- Dashboard-Shop-Detailss-Barber-Services -->
+
+<!-- Barbers -->
+<div class="current-barber">
+    <p class="title">Current Barber's:</p>
+    <app-actions-buttons (edit)="editBarber()" (delete)="deleteBarber()"></app-actions-buttons>
+</div>
+<div class="barber-container">
+    <div class="barbers" *ngFor="let barber of barberList">
+        <p>{{barber}}</p>
+    </div>
+</div>
+
+<!-- Services -->
+<div class="current-service">
+    <p class="title">Current Service's:</p>
+    <app-actions-buttons></app-actions-buttons>
+</div>
+<div class="service-container">
+    <div class="services" *ngFor="let service of serviceList">
+        <p>{{service}}</p>
+    </div>
+</div>
